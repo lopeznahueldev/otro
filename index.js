@@ -10,11 +10,75 @@ let productos = [
     { id: 9, nombre: "Polo Deep Blue Parfum", precio: 478, imagen: "./images/polodeepblue.jpg", link: "./pages/perfume_9.html" },
 ]
 
-let perfume = document.getElementById("perfume");
+//BUSCADOR
+/* let perfume = document.getElementById("perfume");
 let nombre = prompt("Ingrese el nombre de un PERFUME");
 let producto = productos.find(perfume => perfume.nombre === nombre);
 perfume.innerHTML = `<div class="card__header" >
                      <a href="${producto.link}"> <img src="${producto.imagen}" alt="${producto.nombre}" /></a>
                      </div>
                      <a href="${producto.link}"><h3 class="card__title">${producto.nombre}</h3></a>
-                     <p class="card__price">${producto.precio}</p>`; 
+                     <p class="card__price">${producto.precio}</p>`;  */
+
+//MOSTRAR PRODUCTOS
+const mostrarProductos = (productos) => {
+    const contenedorProductos = document.getElementById("perfume")
+
+    productos.forEach(producto => {
+        const div = document.createElement("div")
+        div.classList.add("card")
+        div.innerHTML += `<div class="card__header" >
+                            <a href="${producto.link}"> <img src="${producto.imagen}" alt="${producto.nombre}" /></a>
+                            </div>
+                            <a href="${producto.link}"><h3 class="card__title">${producto.nombre}</h3></a>
+                            <p class="card__price">${producto.precio}</p>
+                            <button id=boton${producto.id}>Comprar</button>`
+
+        contenedorProductos.appendChild(div)
+        
+        const boton = document.getElementById( `boton${producto.id}` )
+
+        boton.addEventListener('click', ()=> {
+            carritoIndex(producto.id)
+            alert(`Se agrego el PERFUME ${producto.nombre}`)
+        })
+
+    })
+}
+
+mostrarProductos(productos)
+
+//CARRITO
+const carritoDeCompras = []
+
+const carritoIndex = (productoId)=>{
+
+    const contenedorCarrito = document.getElementById("carrito")
+
+    const renderProductosCarrito = ()=> {
+        let producto = productos.find( producto => producto.id == productoId )
+        carritoDeCompras.push(producto)
+        console.log(carritoDeCompras);
+
+        producto.cantidad = 1
+
+        let div = document.createElement("div")
+        div.classList.add("productoEnCarrito")
+
+        div.innerHTML = `<p>${producto.nombre}</p>
+                        <p>Precio: ${producto.precio}</p> 
+                        <p id="cantidad${producto.id}">Cantidad: ${producto.cantidad}</p>
+                        <button id="eliminar${producto.id}" class="boton-eliminar" >Eliminar</i></button>`;
+
+        contenedorCarrito.appendChild(div)
+
+        const eliminar = document.getElementById( `eliminar${producto.id}` )
+
+        eliminar.removeEventListener('click', ()=> {
+            carritoIndex(producto.id)
+            alert(`Se elimino el PERFUME ${producto.nombre}`)
+        })
+    }
+
+    renderProductosCarrito()
+}

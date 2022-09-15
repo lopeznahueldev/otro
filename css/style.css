@@ -48,8 +48,13 @@ card__header img {
 main-section {
     margin-top: 40px;
     margin-bottom: 40px;  
+}
 
-
+.boton-eliminar {
+    background-color: rgb(61, 61, 61);
+    color: rgb(252, 0, 0);
+    border: none;
+}
 
 
 /* FOOTER */
@@ -67,3 +72,4 @@ main-section {
             transition: 0.3s;
         }
     }
+}
