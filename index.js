@@ -94,3 +94,5 @@ function cambiarPrecio(nombre, precio){
 }
 
 cambiarPrecio("Paco Rabanne Invictus", 666);
+
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];

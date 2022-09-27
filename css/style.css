@@ -1,75 +1,50 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: #6C786F;  
-    text-decoration: none;
-    font-family: 'Didact Gothic', sans-serif;
-    font-family: 'Playfair Display', serif;
-    list-style-type: none;
-}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #6C786F;
+  text-decoration: none;
+  font-family: 'Didact Gothic', sans-serif;
+  font-family: 'Playfair Display', serif;
+  list-style-type: none; }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
+.container, .footer__content {
+  max-width: 1200px;
+  margin: 0 auto; }
 
 a {
-    text-decoration: none;
-    color: white;  
-}
-
+  text-decoration: none;
+  color: white; }
 
 .card {
-
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 12px 15px -12px rgba(255, 255, 255, 0.116);
-    transition: transform 0.4s;
-
-
-
-}
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 12px 15px -12px rgba(255, 255, 255, 0.116);
+  transition: transform 0.4s; }
 
 card__header {
-    position: relative;
+  position: relative; }
 
-
-
-
-}
 card__header img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px; }
 
 main-section {
-    margin-top: 40px;
-    margin-bottom: 40px;  
-}
+  margin-top: 40px;
+  margin-bottom: 40px; }
 
 .boton-eliminar {
-    background-color: rgb(61, 61, 61);
-    color: rgb(252, 0, 0);
-    border: none;
-}
-
+  background-color: #3d3d3d;
+  color: #fc0000;
+  border: none; }
 
 /* FOOTER */
-.footer {
-
-    &__content {
-        @extend .container;
-        color: $colorFuentes;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 35px;
-
-        & a:hover {
-            color: $colorFondo;
-            transition: 0.3s;
-        }
-    }
-}
+.footer__content {
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px; }
+  .footer__content a:hover {
+    color: black;
+    transition: 0.3s; }
