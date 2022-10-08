@@ -1,0 +1,57 @@
+.main {
+    background-color: #0f1010;
+    grid-area: main;
+
+    &-section {
+        margin-top: 40px;
+        margin-bottom: 40px;  
+
+        &__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+        }
+    }
+}
+
+//TARJETAS=PRODUCTOS
+.card {
+    background-color: #090909;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px -10px #4B4B4B;
+    transition: transform 0.5s;
+
+    &__header {
+        position: relative;
+
+        & img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+    }
+    &:hover {
+        transform: translateY(-3px);
+    }
+
+    & a:hover {
+        color: #4B4B4B;
+        transition: 0.3s;
+    }
+}
+
+.boton-comprar {
+    width: 100%;
+    background-color: #4B4B4B;
+}
+
+//ASIDE=CARRITO
+.aside {
+    background-color: #0f1010;
+    grid-area: aside;
+}
+
+.boton-eliminar {
+    background-color: #4B4B4B;
+}

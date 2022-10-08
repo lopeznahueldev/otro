@@ -2,11 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #6C786F;
+  color: #e2e8e0;
   text-decoration: none;
   font-family: 'Didact Gothic', sans-serif;
   font-family: 'Playfair Display', serif;
   list-style-type: none; }
+
+body {
+  display: grid;
+  grid-template-areas: "header  header  header" "main    main    aside" "footer  footer  footer";
+  min-height: 100vh; }
 
 .container, .footer__content {
   max-width: 1200px;
@@ -14,37 +19,66 @@
 
 a {
   text-decoration: none;
-  color: white; }
+  color: #e2e8e0; }
+
+.header {
+  background-color: #090909;
+  grid-area: header;
+  padding: 30px 20px; }
+  .header a {
+    color: #e2e8e0; }
+  .header a:hover {
+    color: #4B4B4B;
+    transition: 0.3s; }
+
+.main {
+  background-color: #0f1010;
+  grid-area: main; }
+  .main-section {
+    margin-top: 40px;
+    margin-bottom: 40px; }
+    .main-section__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 50px; }
 
 .card {
+  background-color: #090909;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 12px 15px -12px rgba(255, 255, 255, 0.116);
-  transition: transform 0.4s; }
+  box-shadow: 0 10px 10px -10px #4B4B4B;
+  transition: transform 0.5s; }
+  .card__header {
+    position: relative; }
+    .card__header img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px; }
+  .card:hover {
+    transform: translateY(-3px); }
+  .card a:hover {
+    color: #4B4B4B;
+    transition: 0.3s; }
 
-card__header {
-  position: relative; }
-
-card__header img {
+.boton-comprar {
   width: 100%;
-  border-radius: 8px;
-  margin-bottom: 15px; }
+  background-color: #4B4B4B; }
 
-main-section {
-  margin-top: 40px;
-  margin-bottom: 40px; }
+.aside {
+  background-color: #0f1010;
+  grid-area: aside; }
 
 .boton-eliminar {
-  background-color: #3d3d3d;
-  color: #fc0000;
-  border: none; }
+  background-color: #4B4B4B; }
 
-/* FOOTER */
-.footer__content {
-  color: white;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 35px; }
-  .footer__content a:hover {
-    color: black;
-    transition: 0.3s; }
+.footer {
+  color: #e2e8e0;
+  background-color: #090909;
+  grid-area: footer; }
+  .footer__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px; }
+    .footer__content a:hover {
+      color: #4B4B4B;
+      transition: 0.3s; }

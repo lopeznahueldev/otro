@@ -1,0 +1,17 @@
+.footer {
+    color: #e2e8e0;
+    background-color: #090909;
+    grid-area: footer;
+
+    &__content {
+        @extend .container;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 35px;
+
+        & a:hover {
+            color: #4B4B4B;
+            transition: 0.3s;
+        }
+    }
+}

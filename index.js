@@ -5,12 +5,14 @@ fetch("./data.json")
     let div = document.createElement("div");
     div.classList.add("card")
     div.innerHTML = `
+    <div>
     <div class="card__header" >
     <a href="${producto.link}"> <img src="${producto.imagen}" alt="${producto.nombre}" /></a>
     </div>
     <a href="${producto.link}"><h3 class="card__title">${producto.nombre}</h3></a>
-    <p class="card__price">${producto.precio}</p>
-    <button id=boton${producto.id}>Comprar</button>
+    <p class="card__price">$${producto.precio}</p>
+    <button id=boton${producto.id} class="boton-comprar">Comprar</button>
+    </div>
     `;
     perfume.append(div);
 
@@ -129,16 +131,5 @@ const eliminar = (productoId) => {
     const indice = carrito.indexOf(producto)
     carritoDeCompras.splice(indice, 1)
 }
-
-/* function cambiarPrecio(nombre, precio){
-    let array = JSON.parse(localStorage.getItem('productos'));
-  
-    const producto = array.find(producto => producto.nombre === nombre);
-    producto.precio = precio;
-  
-    localStorage.setItem("productos", JSON.stringify(array));
-}
-
-cambiarPrecio("Paco Rabanne Invictus", 666); */
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
